@@ -74,15 +74,12 @@ public class Problem_999 {
             }
         }
 
+        /**
+         * 如果list有相同的，建立相同关系
+         */
         for(Character character : equalMap.keySet()){
-            if(notEqualMap.get(character)==null){
-                continue;
-            }else {
-                for(Character notCharater: notEqualMap.get(character)){
-                    if(character == notCharater){
-                        return false;
-                    }
-                }
+            if(equalMap.get(character)!=null && equalMap.get(character).size()>1){
+
             }
         }
         return true;
