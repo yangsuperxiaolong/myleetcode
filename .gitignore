@@ -1,5 +1,7 @@
 ##out
 
+out/
+
 ##idea
 .idea/
 *.iml

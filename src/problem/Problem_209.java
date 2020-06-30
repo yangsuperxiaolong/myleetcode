@@ -23,16 +23,14 @@ public class Problem_209 {
 //         int s = 7;
 //         int[] nums = new int[]{2,3,1,2,4,3};
 
-//        int s = 213;
-//        int[] nums = new int[]{12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
+        int s = 213;
+        int[] nums = new int[]{12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
 
 //        int s = 8;
 //        int[] nums = new int[]{2,3,1,4,6,7};
 
-         int s = 11;
-         int[] nums = new int[]{1,2,3,4,5};
-
-         //TODO 待修改
+//        int s = 11;
+//        int[] nums = new int[]{1,2,3,4,5};
 
         System.out.println(minSubArrayLen(s, nums));
 
@@ -50,38 +48,14 @@ public class Problem_209 {
         int left = 0;
         int right = 0;
 
-        //算出第一个窗口值大小
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (sum >= s) {
-                right = i + 1;
-                break;
-            }
-
-            if (i == nums.length - 1) {
-                return 0;
-            }
-        }
-
-        minLength = Math.min(minLength, right - left + 1);
-
-        while (left <= right && right <=nums.length) {
-            if (left > 0) {
-                sum = sum - nums[left - 1];
-            }
-            if (sum >= s) {
+        while(left<nums.length && right<nums.length){
+            sum = sum + nums[right];
+            while (sum>=s){
+                minLength = Math.min(minLength,right-left+1);
+                sum = sum-nums[left];
                 left++;
-                minLength = Math.min(minLength, right - left + 1);
-            } else {
-                left++;
-                if (right < nums.length - 1) {
-                    right++;
-                }
-                if (right < nums.length) {
-
-                    sum = sum + nums[right];
-                }
             }
+            right++;
         }
         return minLength;
     }
