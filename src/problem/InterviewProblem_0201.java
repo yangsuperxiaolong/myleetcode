@@ -1,6 +1,8 @@
-package problem.interviewproblems;
+package problem;
 
 import java.util.HashSet;
+
+;
 
 /**
  * 示例1:
@@ -70,13 +72,3 @@ public class InterviewProblem_0201 {
     }
 }
 
-
-//Definition for singly-linked list.
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
